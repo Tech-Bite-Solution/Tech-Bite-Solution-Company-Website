@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MyComponent.module.css */
+.gradientText {
+    background: linear-gradient(to right, #D8F700 0%, #3BDB00 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.bggradient {
+    background: linear-gradient(to right, #D8F700 0%, #3BDB00 50%);
+}
+
+/* .bgImage {
+    background-image: url(../../public/assets/landingbg.png);
+    object-fit: fill;
+} */
