@@ -14,7 +14,7 @@ import video from '/public/assets/video.svg'
 const icons = [
     { src: consultation, alt: 'Icon 1', style: 'top-10 left-5' },
     { src: notification, alt: 'Icon 2', style: 'top-5 right-5' },
-    { src: calendar, alt: 'Icon 3', style: 'top-48 left-5' },
+    { src: calendar, alt: 'Icon 3', style: 'top-40 left-5' },
     { src: calendarPlus, alt: 'Icon 4', style: 'top-40 right-5' },
 ];
 
@@ -23,7 +23,7 @@ const Consultation = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x and opacity value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [200, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [100, 0]);
     const opacityValue = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     return (
@@ -42,7 +42,7 @@ const Consultation = () => {
                 ))}
 
                 {/* Main Content */}
-                <div className="flex py-5 overflow-hidden relative justify-center">
+                <div className="flex py-5  relative justify-center">
                     <motion.div
                         style={{ x: xValue, opacity: opacityValue }}
                         initial={{ opacity: 0 }} // Ensure it starts invisible
@@ -52,7 +52,7 @@ const Consultation = () => {
                     >
                         <Image src={consult} alt='consult' className='py-6 z-10 md:h-auto h-28' />
                     </motion.div>
-                    <h1 className='text-3xl font-bold absolute top-36'>Schedule Your Free Consultation</h1>
+                    <h1 className='md:text-3xl text-base font-bold absolute top-16 md:top-36'>Schedule Your Free Consultation</h1>
                 </div>
                 <p className="md:text-3xl text-xl md:text-center text-[#4C5267] md:py-2 py-5">
                     Choose from the available timeslots below to mark your calendar

@@ -2,6 +2,7 @@
 import Clients from "@/components/Clients";
 import Consultation from "@/components/Consultant";
 import HeroSection from "@/components/HeroSection";
+import Industry from "@/components/Industry";
 import Portfolio from "@/components/Portfolio";
 import Reviews from "@/components/Reviews";
 import Section from "@/components/Section";
@@ -15,6 +16,7 @@ export default function Home() {
       <Section>
         <HeroSection />
         <Services />
+        <Industry />
         <Portfolio />
         <Clients />
         <Consultation />

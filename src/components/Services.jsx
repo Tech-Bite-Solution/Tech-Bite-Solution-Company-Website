@@ -63,7 +63,7 @@ const Services = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [300, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [100, 0]);
     useEffect(() => {
         // Adjust the content area's height to match the sidebar height
         const sidebarElement = document.querySelector('#sidebar');
@@ -85,7 +85,7 @@ const Services = () => {
                 >
                     <Image src={services} alt='Services' className='py-6 z-10 md:h-auto h-28' />
                 </motion.div>
-                <h1 className='text-3xl font-bold absolute top-36'>Our Services</h1>
+                <h1 className='text-3xl font-bold absolute top-16 md:top-36'>Our Services</h1>
             </div>
             <div className="flex flex-col max-w-6xl mx-auto relative lg:flex-row p-8">
                 {/* Sidebar */}

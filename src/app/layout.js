@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import AnimationProvider from "@/components/AnimationProvider";
 
 // Import and configure the Montserrat font
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="bgImage">
+        <div className="">
           <Navbar />
-          <div className="min-h-screen">
-            {children}
+          <div className="">
+            <AnimationProvider>
+              {children}
+            </AnimationProvider>
           </div>
           <Footer />
         </div>

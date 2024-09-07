@@ -19,7 +19,7 @@ function SampleNextArrow(props) {
     return (
         <div
             onClick={!isLastSlide ? onClick : undefined}
-            className={`absolute top-[9rem] right-16 z-40 ${isLastSlide ? 'hidden' : 'cursor-pointer'}`}
+            className={`absolute top-[9rem]  md:right-16 z-40 ${isLastSlide ? 'hidden' : 'cursor-pointer'}`}
         >
             <Image src={rightarrow} alt='arrow' />
         </div>
@@ -33,7 +33,7 @@ function SamplePrevArrow(props) {
     return (
         <div
             onClick={!isFirstSlide ? onClick : undefined}
-            className={`absolute top-[10rem] left-16 z-40 ${isFirstSlide ? 'hidden' : 'cursor-pointer'}`}
+            className={`absolute top-[10rem]  md:left-16 z-40 ${isFirstSlide ? 'hidden' : 'cursor-pointer'}`}
         >
             <Image src={leftarrow} alt='arrow' />
 
@@ -50,24 +50,23 @@ const Reviews = () => {
 
     const testimonials = [
         {
-            name: 'Hannah Schmitt',
-            date: 'May 8, 2020',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+            name: 'Andrew Mika',
+            title: 'CEO at GoodRite',
+            description: 'As a growing business, we needed reliable software to streamline operations. Tech Bite Solution delivered beyond our expectations, and their support team was always there to help.',
             img: women,
         },
         {
-            name: 'John Doe',
-            date: 'Jun 12, 2020',
-            description: 'Suspendisse sed magna eget nibh in turpis...',
+            name: 'Lisa Handerson',
+            title: 'Co founder at Brainly',
+            description: "Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.",
             img: women,
         },
         {
-            name: 'Jane Smith',
-            date: 'Jul 24, 2020',
-            description: 'Faucibus venenatis felis id augue sit cursus...',
+            name: 'Nika Bernouseville',
+            title: 'Business Partnership Manager at AmCash',
+            description: 'Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!',
             img: women,
         },
-        // Add more testimonials as needed
     ];
 
     const settings = {
@@ -91,24 +90,24 @@ const Reviews = () => {
                 >
                     <Image src={reviews} alt='reviews' className='py-6 z-10 md:h-auto h-28' />
                 </motion.div>
-                <h1 className='text-4xl font-bold absolute top-36'>Here is what our Clients are saying About us</h1>
+                <h1 className='md:text-4xl text-base font-bold absolute top-16 md:top-36'>Here is what our Clients are saying About us</h1>
             </div>
             <div className="">
                 <Slider {...settings}>
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="py-14">
-                            <div className="flex items-center mx-auto bggradient text-black rounded-xl p-6 shadow-lg max-w-4xl w-full">
+                            <div className="flex md:flex-row flex-col items-center mx-auto bggradient text-black rounded-xl p-6 shadow-lg max-w-4xl w-full">
                                 <div className="mr-4">
                                     <Image
                                         src={testimonial.img}
                                         alt={testimonial.name}
-                                        className="rounded-full"
+                                        className="rounded-full h-52 w-52"
                                     />
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold">{testimonial.name}</h3>
                                     <p className="text-sm my-2">{testimonial.description}</p>
-                                    <span className="text-sm text-gray-700">{testimonial.date}</span>
+                                    <span className="text-sm font-medium text-gray-700">{testimonial.title}</span>
                                 </div>
                             </div>
                         </div>
