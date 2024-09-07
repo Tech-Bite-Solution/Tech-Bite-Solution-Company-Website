@@ -37,12 +37,12 @@ const Footer = () => {
                                 <div>
                                     <h3 className="font-bold py-3 gradientText">Contact</h3>
                                     <div className="space-y-2">
-                                        <p className='text-[#77808B] text-sm flex items-center'><Image src={call} alt='' className='h-5' />+1 386-688-3295 </p>
-                                        <p className='text-[#77808B] text-sm flex items-center gap-2'><Image src={email} alt='' className='h-5' />Ourstore@hello.com</p>
+                                        <p className='text-[#77808B] text-sm flex items-center'><Image src={call} alt='' className='h-5' />+61 452 130 266</p>
+                                        <p className='text-[#77808B] text-sm flex items-center gap-2'><Image src={email} alt='' className='h-5' />team@techbitesolution.com</p>
                                     </div>
                                     <h3 className="gradientText font-bold py-2 ">Our Social Media</h3>
                                     <div className="space-y-2">
-                                        <p className='text-[#77808B]'>Instagram</p>
+                                        <p className='text-[#77808B]' href="https://www.instagram.com/techbite_solution/" >Instagram</p>
                                         <p className='text-[#77808B]'>Facebook</p>
                                         <p className='text-[#77808B]'>Twitter</p>
                                     </div>
