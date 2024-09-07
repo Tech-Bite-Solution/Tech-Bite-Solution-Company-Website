@@ -20,7 +20,6 @@ const menuItems = [
             { title: "Mobile App Development", url: "/" },
         ],
     },
-    { label: "About Us", url: "/about-us" },
     { label: "Contact", url: "/contactUs" },
 ];
 
@@ -102,11 +101,10 @@ const Navbar = () => {
                                 </button>
                             </Link>
                         ))}
-
                         <div className="flex items-center ml-8">
-                            <Link href="/login" className="text-base font-medium text-gray-700 hover:scale-105 duration-300 transition-all">Sign in</Link>
-                            <div className="mx-2">/</div>
-                            <Link href="/signUp" className="text-base font-medium text-gray-700 hover:scale-105 duration-300 transition-all">Sign up</Link>
+                            <div className="mx-2">About us</div>
+                            <div className="mx-2">Portfolio</div>
+                            <div className="mx-2">Industries</div>
                         </div>
                     </div>
 

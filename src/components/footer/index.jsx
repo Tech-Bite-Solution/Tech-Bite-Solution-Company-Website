@@ -4,6 +4,7 @@ import { FaInstagram, FaTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa';
 import flogo from '/public/assets/flogo.svg'
 import call from "/public/assets/call.svg";
 import email from "/public/assets/email.svg";
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -37,14 +38,14 @@ const Footer = () => {
                                 <div>
                                     <h3 className="font-bold py-3 gradientText">Contact</h3>
                                     <div className="space-y-2">
-                                        <p className='text-[#77808B] text-sm flex items-center'><Image src={call} alt='' className='h-5' />+61 452 130 266</p>
-                                        <p className='text-[#77808B] text-sm flex items-center gap-2'><Image src={email} alt='' className='h-5' />team@techbitesolution.com</p>
+                                        <p className='text-[#77808B] text-sm flex items-center'><Image src={call} alt='' className='h-5' /><Link href='/' >+61 452 130 266</Link></p>
+                                        <p className='text-[#77808B] text-sm flex items-center gap-2'><Image src={email} alt='' className='h-5' /><Link href='mailto:team@techbitesolution.com' >team@techbitesolution.com</Link></p>
                                     </div>
                                     <h3 className="gradientText font-bold py-2 ">Our Social Media</h3>
                                     <div className="space-y-2">
-                                        <p className='text-[#77808B]' href="https://www.instagram.com/techbite_solution/" >Instagram</p>
-                                        <p className='text-[#77808B]'>Facebook</p>
-                                        <p className='text-[#77808B]'>Twitter</p>
+                                        <p className='text-[#77808B]'><Link href='https://www.instagram.com/techbite_solution/' >Instagram</Link></p>
+                                        <p className='text-[#77808B]'><Link href='https://www.facebook.com/profile.php?id=61561387413378' >Facebook</Link></p>
+                                        <p className='text-[#77808B]'><Link href='https://www.linkedin.com/company/tech-bite-solution-pk/' >LinkedIn</Link></p>
                                     </div>
                                 </div>
                             </div>
