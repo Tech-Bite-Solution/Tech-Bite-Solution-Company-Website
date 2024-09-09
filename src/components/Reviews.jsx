@@ -1,121 +1,147 @@
-'use client'
+'use client';
 
-import { useScroll, motion, useTransform } from 'framer-motion';
-import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import reviews from '/public/assets/reviews.svg'
-import Slider from 'react-slick';
+import React, { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import rightarrow from '/public/assets/rightarrow.svg'
-import leftarrow from '/public/assets/leftarrow.svg'
-import women from '/public/assets/women.svg'
+import women from '/public/assets/women.svg';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { useScroll, useTransform, motion } from 'framer-motion';
+import reviews from '/public/assets/reviews.svg'
 
+// Dynamically import react-slick, to ensure it only runs on the client
+const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
 function SampleNextArrow(props) {
-    const { onClick, currentSlide, slideCount } = props;
-    const isLastSlide = currentSlide === slideCount - 1;
+    const { onClick } = props;
 
     return (
         <div
-            onClick={!isLastSlide ? onClick : undefined}
-            className={`absolute top-[9rem]  md:right-16 z-40 ${isLastSlide ? 'hidden' : 'cursor-pointer'}`}
+            onClick={onClick}
+            className="absolute top-[10rem] md:top-[10rem] md:-right-12 right-0 z-40 text-gray-400 cursor-pointer"
         >
-            <Image src={rightarrow} alt='arrow' />
+            <MdKeyboardArrowRight className="text-5xl" />
         </div>
     );
 }
 
 function SamplePrevArrow(props) {
-    const { onClick, currentSlide } = props;
-    const isFirstSlide = currentSlide === 0;
+    const { onClick } = props;
 
     return (
         <div
-            onClick={!isFirstSlide ? onClick : undefined}
-            className={`absolute top-[10rem]  md:left-16 z-40 ${isFirstSlide ? 'hidden' : 'cursor-pointer'}`}
+            onClick={onClick}
+            className="absolute top-[10rem] md:top-[10rem] md:-left-12 -left-2 z-40 text-gray-400 cursor-pointer"
         >
-            <Image src={leftarrow} alt='arrow' />
-
+            <MdKeyboardArrowLeft className="text-5xl" />
         </div>
     );
 }
+const testimonials = [
+    {
+        id: 1,
+        name: ' Andrew Mika',
+        title: ' CEO at GoodRite',
+        image: women,
+        feedback: `As a growing business, we needed reliable software to streamline operations. Tech Bite Solution delivered beyond our expectations, and their support team was always there to help.`,
+    },
+    {
+        id: 2,
+        name: 'Nika Bernouseville',
+        title: ' Business Partnership Manager at AmCash',
+        image: women,
+        feedback: `Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!`,
+    },
+    {
+        id: 3,
+        name: 'Lisa Handerson',
+        title: ' Co founder at Brainly',
+        image: women,
+        feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
+    },
+];
+
+// Carousel settings
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    centerPadding: '0', // Remove padding for a clean skew effect
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+            },
+        },
+    ],
+};
 
 const Reviews = () => {
+    const [isClient, setIsClient] = useState(false);
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [300, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [1000, 0]);
 
-    const testimonials = [
-        {
-            name: 'Andrew Mika',
-            title: 'CEO at GoodRite',
-            description: 'As a growing business, we needed reliable software to streamline operations. Tech Bite Solution delivered beyond our expectations, and their support team was always there to help.',
-            img: women,
-        },
-        {
-            name: 'Lisa Handerson',
-            title: 'Co founder at Brainly',
-            description: "Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.",
-            img: women,
-        },
-        {
-            name: 'Nika Bernouseville',
-            title: 'Business Partnership Manager at AmCash',
-            description: 'Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!',
-            img: women,
-        },
-    ];
 
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
-    };
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    if (!isClient) {
+        return null;
+    }
 
     return (
         <div ref={ref} className="">
+
             <div className="flex py-5 overflow-hidden relative justify-center">
                 <motion.div
                     style={{ x: xValue }}
-                    initial={{ opacity: 0 }} // Ensure it starts invisible
                     whileInView={{ opacity: 1 }}
-                    transition={.9}
+                    transition={{ duration: 0.2 }}
                     className=""
                 >
-                    <Image src={reviews} alt='reviews' className='py-6 z-10 md:h-auto h-28' />
+                    <Image src={reviews} alt="review" className="py-6" />
                 </motion.div>
-                <h1 className='md:text-4xl text-base font-bold absolute top-16 md:top-36'>Here is what our Clients are saying About us</h1>
+                <h1 className="md:text-3xl font-bold absolute top-10 md:top-36">Here is what our Clients are saying About us</h1>
             </div>
-            <div className="">
-                <Slider {...settings}>
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="py-14">
-                            <div className="flex md:flex-row flex-col items-center mx-auto bggradient text-black rounded-xl p-6 shadow-lg max-w-4xl w-full">
-                                <div className="mr-4">
+
+            <Slider {...settings} className="max-w-6xl mx-auto">
+                {testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="px-4 lg:px-0">
+                        <div className="relative p-6 transform-gpu transition-transform duration-500 ease-in-out hover:scale-105">
+                            <div className="bggradient rounded-3xl  p-6 flex flex-col items-start max-w-lg mx-auto relative">
+                                <div className="absolute top-0 left-0 mt-4 px-8">
                                     <Image
-                                        src={testimonial.img}
+                                        src={testimonial.image}
                                         alt={testimonial.name}
-                                        className="rounded-full h-52 w-52"
+                                        width={64}
+                                        height={64}
+                                        className="rounded-full"
                                     />
                                 </div>
-                                <div>
-                                    <h3 className="text-xl font-bold">{testimonial.name}</h3>
-                                    <p className="text-sm my-2">{testimonial.description}</p>
-                                    <span className="text-sm font-medium text-gray-700">{testimonial.title}</span>
+                                <div className="mt-16">
+                                    <h3 className=" text-xl font-bold">{testimonial.name}</h3>
+                                    <p className="font-semibold mb-4">{testimonial.title}</p>
+                                    <p className="text-left">
+                                        {testimonial.feedback}
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </Slider>
-            </div>
+                    </div>
+                ))}
+            </Slider>
         </div>
     );
-}
+};
 
 export default Reviews;

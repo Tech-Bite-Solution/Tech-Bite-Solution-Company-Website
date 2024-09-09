@@ -63,7 +63,7 @@ const Services = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [100, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [800, -1200]);
     useEffect(() => {
         // Adjust the content area's height to match the sidebar height
         const sidebarElement = document.querySelector('#sidebar');
@@ -77,11 +77,11 @@ const Services = () => {
 
             <div className="flex py-5  overflow-hidden relative justify-center">
                 <motion.div
-                    style={{ x: xValue }}
-                    initial={{ opacity: 0 }} // Ensure it starts invisible
-                    whileInView={{ opacity: 1 }}
-                    transition={.9}
-                    className=""
+                     style={{ x: xValue }}
+                     initial={{ opacity: 0 }} // Ensure it starts invisible
+                     whileInView={{ opacity: 1 }}
+                     transition={{ duration: 0.8}}
+                     className=""
                 >
                     <Image src={services} alt='Services' className='py-6 z-10 md:h-auto h-28' />
                 </motion.div>

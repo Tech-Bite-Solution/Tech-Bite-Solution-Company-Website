@@ -15,7 +15,7 @@ const WhyUs = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [200, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [1000, -1200]);
 
     // Data for each tab
     const tabs = [
@@ -50,16 +50,16 @@ const WhyUs = () => {
                     style={{ x: xValue }}
                     initial={{ opacity: 0 }} // Ensure it starts invisible
                     whileInView={{ opacity: 1 }}
-                    transition={.9}
+                    transition={{ duration: 0.8 }}
                     className=""
                 >
-                    <Image src={whyus} alt='whyus' className='py-6 z-10 md:h-auto h-28' />
+                    <Image src={whyus} alt='whyus' className='py-6' />
                 </motion.div>
-                <h1 className='text-4xl font-bold absolute top-28'>Why Choose us?</h1>
+                <h1 className='text-4xl font-bold absolute top-10 md:top-28'>Why Choose us?</h1>
             </div>
             <div className="md:max-w-6xl md:mx-auto ">
 
-                <h2 className="text-3xl font-bold gradientText">
+                <h2 className="md:text-3xl font-bold gradientText">
                     Our Client-Centric AI Solutions
                 </h2>
 
@@ -76,7 +76,7 @@ const WhyUs = () => {
                     ))}
                 </div>
                 {/* Left Section */}
-                <div className="px-4 flex flex-col gap-10 lg:flex-row items-center">
+                <div className="px-4 flex md:h-96 flex-col gap-10 lg:flex-row items-center">
                     {/* Content Section */}
                     <div className="lg:w-1/2">
                         <h3 className="text-2xl font-bold text-gray-800">

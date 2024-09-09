@@ -7,7 +7,7 @@ const Section = ({
     className,
 }) => {
     return (
-        <div className={`lg:max-w-screen-2xl mx-auto px-5 ${className || ""}`}>
+        <div className={`lg:max-w-screen-2xl mx-auto ${className || ""}`}>
             {children}
         </div>
     );

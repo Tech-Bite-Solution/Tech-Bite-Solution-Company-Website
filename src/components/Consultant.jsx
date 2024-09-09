@@ -12,10 +12,10 @@ import clock from '/public/assets/clock.svg'
 import video from '/public/assets/video.svg'
 
 const icons = [
-    { src: consultation, alt: 'Icon 1', style: 'top-10 left-5' },
-    { src: notification, alt: 'Icon 2', style: 'top-5 right-5' },
-    { src: calendar, alt: 'Icon 3', style: 'top-40 left-5' },
-    { src: calendarPlus, alt: 'Icon 4', style: 'top-40 right-5' },
+    { src: consultation, alt: 'Icon 1', style: 'top-10 left-24' },
+    { src: notification, alt: 'Icon 2', style: 'top-5 right-24' },
+    { src: calendar, alt: 'Icon 3', style: 'top-40 left-36' },
+    { src: calendarPlus, alt: 'Icon 4', style: 'top-40 right-40' },
 ];
 
 const Consultation = () => {
@@ -23,23 +23,25 @@ const Consultation = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
     // Transform the x and opacity value based on the scroll progress
-    const xValue = useTransform(scrollYProgress, [0, 1], [100, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [900, -1600]);
     const opacityValue = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     return (
         <div ref={ref} className="py-8">
-            <div className="relative max-w-6xl mx-auto p-6 rounded-lg">
+            <div className="relative overflow-hidden p-6 rounded-lg">
                 {/* Background Icons with Animation */}
-                {icons.map((icon, index) => (
-                    <motion.div
-                        key={index}
-                        className={`absolute ${icon.style}`}
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.75, ease: 'easeInOut' }}
-                    >
-                        <Image src={icon.src} alt={icon.alt} width={40} height={40} />
-                    </motion.div>
-                ))}
+                <div className="md:block hidden">
+                    {icons.map((icon, index) => (
+                        <motion.div
+                            key={index}
+                            className={`absolute ${icon.style}`}
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.75, ease: 'easeInOut' }}
+                        >
+                            <Image src={icon.src} alt={icon.alt} width={40} height={40} />
+                        </motion.div>
+                    ))}
+                </div>
 
                 {/* Main Content */}
                 <div className="flex py-5  relative justify-center">
@@ -57,7 +59,7 @@ const Consultation = () => {
                 <p className="md:text-3xl text-xl md:text-center text-[#4C5267] md:py-2 py-5">
                     Choose from the available timeslots below to mark your calendar
                 </p>
-                <div className="grid md:grid-cols-2 gap-10 py-10">
+                <div className="grid max-w-6xl mx-auto md:grid-cols-2 gap-10 py-10">
                     <div className="text-left space-y-2">
                         <h2 className="text-6xl py-2 font-bold gradientText">BOOK <br /> NOW!</h2>
                         <p className=" text-xl font-medium py-3 text-[#4C5267]">

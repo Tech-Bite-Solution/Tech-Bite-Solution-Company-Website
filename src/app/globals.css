@@ -21,7 +21,13 @@ body {
     background: linear-gradient(to right, #D8F700 0%, #3BDB00 50%);
 }
 
-/* .bgImage {
-    background-image: url(../../public/assets/landingbg.png);
-    object-fit: fill;
-} */
+/* Tailwind CSS for skew effect */
+.carousel-item {
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item:nth-child(1) {
+    transform: skew(-10deg);
+}
+.carousel-item:nth-child(3) {
+    transform: skew(10deg);
+}

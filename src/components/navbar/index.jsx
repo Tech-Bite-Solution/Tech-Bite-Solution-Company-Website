@@ -4,22 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import logo from '/public/assets/logo.svg';
+import tbite from '/public/assets/tbite.png';
 
 const menuItems = [
     { label: "Home", url: "/" },
-    {
-        label: "Services",
-        url: "/Services",
-        items: [
-            { title: "AI Development", url: "/" },
-            { title: "Machine Learning", url: "/" },
-            { title: "Chat Bots", url: "/" },
-            { title: "Integrated Solutions", url: "/" },
-            { title: "Custom Web Development", url: "/" },
-            { title: "Mobile App Development", url: "/" },
-        ],
-    },
+    { label: "Services", url: "/services" },
+    { label: "About Us", url: "/about-us" },
+    { label: "Portfolio", url: "/portfolio" },
+    { label: "Industries", url: "/industries" },
     { label: "Contact", url: "/contactUs" },
 ];
 
@@ -44,53 +36,29 @@ const Navbar = () => {
 
     return (
         <div className="w-full px-5">
-            <nav className="flex justify-center lg:w-4/5 mx-auto px-2 py-2 items-start relative top-0 w-full z-20 text-black bg-transparent">
-                <div className="flex items-center justify-center w-full">
+            <nav className="flex lg:justify-center 2xl:w-full lg:w-4/5 mx-auto px-2 py-2 items-center relative top-0 w-full z-20 text-black bg-transparent">
+                <div className="flex items-center justify-between w-full">
+                    {/* First Three Buttons */}
                     <div className="hidden md:flex items-center">
                         {menuItems.slice(0, 3).map((item, i) => (
-                            <div key={i} className="relative" onMouseLeave={() => setActiveLabel(null)}>
-                                {item.items ? (
-                                    <>
-                                        <button
-                                            onMouseEnter={() => setActiveLabel(item.label)}
-                                            onClick={() => setActiveLabel(null)}
-                                            className={`hover:scale-105 text-gray-700  text-base duration-300 transition-all py-3 px-5 flex items-center gap-2 ${activeLabel === item.label ? "text-black font-bold" : ""}`}
-                                        >
-                                            {item.label}
-                                        </button>
-                                        {activeLabel === item.label && (
-                                            <div className="absolute w-72 bg-white shadow-lg rounded-2xl p-4 flex flex-col justify-center items-start">
-                                                {item.items.map((menu, j) => (
-                                                    <Link
-                                                        className="hover:bg-green-500 hover:text-white w-full px-3 py-3 transition-transform transform hover:scale-105 duration-300 ease-in-out"
-                                                        href={menu.url}
-                                                        key={j}
-                                                    >
-                                                        {menu.title}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </>
-                                ) : (
-                                    <Link href={item.url}>
-                                        <button
-                                            className={`hover:scale-105 text-base text-gray-700 hover:text-primary duration-300 transition-all py-3 px-5 flex items-baseline gap-2 ${isActive(item.url)}`}
-                                        >
-                                            {item.label}
-                                        </button>
-                                    </Link>
-                                )}
-                            </div>
+                            <Link href={item.url} key={i}>
+                                <button
+                                    className={`hover:scale-105 text-base text-gray-700 hover:text-primary duration-300 transition-all py-3 px-5 flex items-baseline gap-2 ${isActive(item.url)}`}
+                                >
+                                    {item.label}
+                                </button>
+                            </Link>
                         ))}
                     </div>
 
-                    <div className="flex justify-center flex-shrink-0">
+                    {/* Logo in the Center */}
+                    <div className="flex justify-center md:w-96 flex-shrink-0">
                         <Link href="/">
-                            <Image src={logo} alt="Logo" className="" />
+                            <Image src={tbite} alt="Logo" className="md:w-full w-28" />
                         </Link>
                     </div>
 
+                    {/* Last Three Buttons */}
                     <div className="hidden md:flex items-center">
                         {menuItems.slice(3).map((item, i) => (
                             <Link href={item.url} key={i}>
@@ -101,13 +69,9 @@ const Navbar = () => {
                                 </button>
                             </Link>
                         ))}
-                        <div className="flex items-center ml-8">
-                            <div className="mx-2">About us</div>
-                            <div className="mx-2">Portfolio</div>
-                            <div className="mx-2">Industries</div>
-                        </div>
                     </div>
 
+                    {/* Mobile Menu Button */}
                     <button onClick={handleModal} className="md:hidden block text-secondary">
                         {isModalOpen ? (
                             <svg
@@ -144,47 +108,21 @@ const Navbar = () => {
                 </div>
             </nav>
 
+            {/* Mobile Menu */}
             {isModalOpen && (
                 <>
-                    <div className="w-full h-screen fixed blurBg left-0 top-0" onClick={closeModal}></div>
-                    <div className="bg-white absolute left-0 w-full px-5 z-20 py-5 shadow-2xl transition-all duration-300">
+                    <div className="w-full h-screen fixed bg-black bg-opacity-50 left-0 top-0" ></div>
+                    <div onClick={closeModal} className="bg-white absolute left-0 w-full px-5 z-20 py-5 shadow-2xl transition-all duration-300">
                         <div className="flex flex-col items-start">
                             {menuItems.map((item, i) => (
-                                <div key={i} className="relative">
-                                    {item.items ? (
-                                        <>
-                                            <button
-                                                onClick={() => (activeLabel ? setActiveLabel(null) : setActiveLabel(item.label))}
-                                                className={`hover:scale-105 text-base font-medium text-textBlack hover:text-primary duration-300 transition-all py-3 flex items-baseline gap-2 ${activeLabel === item.label ? "bg-background" : ""}`}
-                                            >
-                                                {item.label}
-                                            </button>
-                                            {activeLabel === item.label && (
-                                                <div className="absolute w-48 z-10 bg-white shadow-lg rounded-2xl p-2 flex flex-col gap-4 justify-center items-start">
-                                                    {item.items.map((menu, j) => (
-                                                        <Link href={menu.url} key={j}>
-                                                            {menu.title}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </>
-                                    ) : (
-                                        <Link href={item.url}>
-                                            <button
-                                                className={`hover:scale-105 text-base font-medium text-textBlack hover:text-primary duration-300 transition-all py-3 flex items-baseline gap-2 ${isActive(item.url)}`}
-                                            >
-                                                {item.label}
-                                            </button>
-                                        </Link>
-                                    )}
-                                </div>
+                                <Link href={item.url} key={i}>
+                                    <button
+                                        className={`hover:scale-105 text-base font-medium text-black hover:text-primary duration-300 transition-all py-3 flex items-baseline gap-2 ${isActive(item.url)}`}
+                                    >
+                                        {item.label}
+                                    </button>
+                                </Link>
                             ))}
-
-                            <div className="lg:flex items-center  mt-5">
-                                <Link href="/login" className="text-base block py-3  rounded-xl font-medium text-black bg-secondary hover:scale-105 duration-300 transition-all">Login</Link>
-                                <Link href="/signUp" className="text-base block py-3 rounded-xl font-medium bg-primary hover:scale-105 duration-300 transition-all">Sign Up</Link>
-                            </div>
                         </div>
                     </div>
                 </>

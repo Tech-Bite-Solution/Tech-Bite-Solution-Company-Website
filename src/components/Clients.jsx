@@ -13,7 +13,7 @@ const Clients = () => {
     const [selectedTab, setSelectedTab] = useState('Startups');
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-    const xValue = useTransform(scrollYProgress, [0, 1], [200, 0]);
+    const xValue = useTransform(scrollYProgress, [0, 1], [800, -1200]);
 
     const tabs = [
         {
@@ -51,27 +51,27 @@ const Clients = () => {
                         style={{ x: xValue }}
                         initial={{ opacity: 0 }} // Ensure it starts invisible
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.9 }}
+                        transition={{ duration: 0.8}}
                         className=""
                     >
                         <Image src={clients} alt='clients' className='py-6 z-10 ' />
                     </motion.div>
-                    <h1 className='text-3xl font-bold absolute top-20 md:top-28'>Who our Clients are?</h1>
+                    <h1 className='md:text-3xl font-bold absolute top-20 md:top-28'>Who our Clients are?</h1>
                 </div>
 
-                <div className="md:max-w-6xl md:mx-auto">
+                <div className="md:max-w-6xl md:px-0 px-4 md:mx-auto">
                     <div className="">
                         <h2 className="text-3xl font-bold gradientText">
                             Our Client
                         </h2>
 
                         {/* Tabs Section */}
-                        <div className="flex md:flex-row flex-col py-5 md:space-x-3">
+                        <div className="flex md:flex-row flex-col py-5 md:space-y-0 space-y-3 md:space-x-3">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.title}
                                     onClick={() => setSelectedTab(tab.title)}
-                                    className={`px-2 py-2 ${selectedTab === tab.title ? 'underline' : 'text-gray-500'} text-base text-left rounded-lg font-medium`}
+                                    className={`px-4 py-2 ${selectedTab === tab.title ? 'bg-green-200 text-green-600' : 'bg-gray-100 text-gray-500'} rounded-lg font-medium`}
                                 >
                                     {tab.title}
                                 </button>
