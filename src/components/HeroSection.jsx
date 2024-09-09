@@ -45,8 +45,8 @@ const HeroSection = () => {
                 <div className="flex flex-col items-center gap-10">
                     <div className="max-w-4xl px-2 py-12 mx-auto">
                         <p className='md:text-5xl text-3xl py-5 font-bold text-center '>Your Partner in cutting edge <span className='gradientText'> software development</span></p>
-                        <p className='font-medium py-3 text-center'>"Empowering Industries with Scalable Solutions.
-                            Transform your business operations with tailored software solutions that streamline processes, enhance efficiency, and drive growth."
+                        <p className='font-medium py-3 text-center'>Empowering Industries with Scalable Solutions.
+                            Transform your business operations with tailored software solutions that streamline processes, enhance efficiency, and drive growth.
                         </p>
                         <p className='font-medium text-center'>
                             Bites of Business for your Business
