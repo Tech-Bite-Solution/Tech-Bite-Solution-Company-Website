@@ -8,6 +8,8 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import reviews from '/public/assets/reviews.svg';
 import women from '/public/assets/women.svg';
+import male from '/public/assets/male.jpg';
+import female from '/public/assets/female.png';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow'; // Import effect-specific styles
 import 'swiper/css/pagination';
@@ -18,14 +20,14 @@ const testimonials = [
         id: 1,
         name: 'Andrew Mika',
         title: 'CEO at GoodRite',
-        image: women,
+        image: male,
         feedback: `As a growing business, we needed reliable software to streamline operations. Tech Bite Solution delivered beyond our expectations, and their support team was always there to help.`,
     },
     {
         id: 2,
         name: 'Nika Bernouseville',
         title: 'Business Partnership Manager at AmCash',
-        image: women,
+        image: female,
         feedback: `Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!`,
     },
     {
@@ -39,7 +41,7 @@ const testimonials = [
         id: 4,
         name: 'Lisa Handerson',
         title: 'Co-founder at Brainly',
-        image: women,
+        image: female,
         feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
     },
     {
@@ -53,7 +55,7 @@ const testimonials = [
         id: 6,
         name: 'Lisa Handerson',
         title: 'Co-founder at Brainly',
-        image: women,
+        image: female,
         feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
     },
     {
