@@ -21,6 +21,15 @@ body {
     background: linear-gradient(to right, #D8F700 0%, #3BDB00 50%);
 }
 
-.swiper-3d{
+.swiper-3d {
     perspective: 1200px;
+}
+
+/* .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -10px !important;
+    z-index: 999 !important;
+} */
+
+.swiper-pagination-bullet-active {
+    background: #fff !important;
 }
