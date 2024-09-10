@@ -1,4 +1,5 @@
 // import TeamCarousel from "@/components/cards";
+import AboutUs from "@/components/AboutUs";
 import Clients from "@/components/Clients";
 import Consultation from "@/components/Consultant";
 import HeroSection from "@/components/HeroSection";
@@ -8,7 +9,7 @@ import Reviews from "@/components/Reviews";
 import Section from "@/components/Section";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Clients />
         <Consultation />
         <WhyUs />
+        <AboutUs />
         <Reviews />
       </Section>
       {/* <TeamCarousel /> */}

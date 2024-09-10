@@ -55,14 +55,14 @@ const services = [
 const Industry = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-    const xValue = useTransform(scrollYProgress, [0, 1], [900, -1200]); // Adjust values here
+    const xValue = useTransform(scrollYProgress, [0, 1], [900, -1800]); // Adjust values here
 
     return (
-        <div className="relative md:py-10">
+        <div id='industries' className="relative md:py-10">
             <div className="flex py-5 overflow-hidden relative justify-center">
                 <motion.div
                     style={{ x: xValue }}
-                    transition={{ duration: 0.8}} // Adjust the duration if needed
+                    transition={{ duration: 0.3}} 
                     className="flex justify-center"
                 >
                     <Image src={industry} alt="industry" className="py-6" />

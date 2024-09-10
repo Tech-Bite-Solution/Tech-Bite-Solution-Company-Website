@@ -100,7 +100,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div ref={ref} className="md:py-10">
+        <div id='portfolio' ref={ref} className="md:py-10">
             <div className="flex py-5 overflow-hidden relative justify-center">
                 <motion.div
                     style={{ x: xValue }}

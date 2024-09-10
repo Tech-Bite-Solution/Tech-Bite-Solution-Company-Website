@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 
 const icons = [
-    { src: algolia, alt: 'Icon 1', style: 'top-0 left-20' },
+    { src: algolia, alt: 'Icon 1', style: 'top-5 left-20' },
     { src: aws, alt: 'Icon 2', style: 'top-5 right-40' },
     { src: azure, alt: 'Icon 3', style: 'top-48 left-24' },
     { src: docker, alt: 'Icon 4', style: 'top-20 right-20' },
@@ -29,7 +29,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div ref={ref} className="py-10">
+            <div ref={ref} className="py-16">
                 <div className="relative md:block hidden">
                     {icons.map((icon, index) => (
                         <motion.div
@@ -45,14 +45,14 @@ const HeroSection = () => {
                 <div className="flex flex-col items-center gap-10">
                     <div className="max-w-4xl px-2 py-12 mx-auto">
                         <p className='md:text-5xl text-3xl py-5 font-bold text-center '>Your Partner in cutting edge <span className='gradientText'> software development</span></p>
-                        <p className='font-medium py-3 text-center'>Empowering Industries with Scalable Solutions.
+                        <p className='font-medium py-6 text-center'>Empowering Industries with Scalable Solutions.
                             Transform your business operations with tailored software solutions that streamline processes, enhance efficiency, and drive growth.
                         </p>
                         <p className='font-medium text-center'>
                             Bites of Business for your Business
                         </p>
                     </div>
-                    <button className='bggradient px-3 py-2 rounded-full text-center font-semibold'>Get Quotes</button>
+                    <button className='bggradient px-6 py-3 rounded-full text-center font-semibold'>Get Quotes</button>
                 </div>
             </div>
         </>

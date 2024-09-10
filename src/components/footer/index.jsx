@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import React from 'react';
-import { FaInstagram, FaTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import flogo from '/public/assets/flogo.svg'
 import call from "/public/assets/call.svg";
 import email from "/public/assets/email.svg";
 import Link from 'next/link';
+import { FaUpwork } from "react-icons/fa6";
 
 const Footer = () => {
     return (
         <>
-            <div className="bg-black ">
+            <div id='contact' className="bg-black ">
                 <div className="px-10 mx-auto">
                     <footer className="text-white">
                         <div className="py-10 grid grid-cols-1 md:grid-cols-4">
@@ -46,6 +47,7 @@ const Footer = () => {
                                         <p className='text-[#77808B]'><Link href='https://www.instagram.com/techbite_solution/' >Instagram</Link></p>
                                         <p className='text-[#77808B]'><Link href='https://www.facebook.com/profile.php?id=61561387413378' >Facebook</Link></p>
                                         <p className='text-[#77808B]'><Link href='https://www.linkedin.com/company/tech-bite-solution-pk/' >LinkedIn</Link></p>
+                                        <p className='text-[#77808B]'><Link href='https://www.upwork.com/agencies/1828398087328567907/' >Upwork</Link></p>
                                     </div>
                                 </div>
                             </div>
@@ -77,10 +79,10 @@ const Footer = () => {
                                 <li>Cookies</li>
                             </ul>
                             <ul className="flex text-center gap-5">
-                                <li className='bg-white flex cursor-pointer justify-center text-black items-center w-6 h-6 rounded-full'><FaInstagram /></li>
-                                <li  className='bg-white flex justify-center cursor-pointer text-black items-center w-6 h-6 rounded-full'><FaFacebookF /></li>
-                                <li  className='bg-white flex justify-center cursor-pointer text-black items-center w-6 h-6 rounded-full'><FaTwitter /></li>
-                                <li  className='bg-white flex justify-center cursor-pointer text-black items-center w-6 h-6 rounded-full'><FaYoutube /></li>
+                                <li className='bg-white flex cursor-pointer justify-center text-black items-center w-7 h-7 rounded-full'><Link href='https://www.instagram.com/techbite_solution/'><FaInstagram /></Link></li>
+                                <li className='bg-white flex justify-center cursor-pointer text-black items-center w-7 h-7 rounded-full'><Link href='https://www.facebook.com/profile.php?id=61561387413378'><FaFacebookF /></Link></li>
+                                <li className='bg-white flex justify-center cursor-pointer text-black items-center w-7 h-7 rounded-full'><Link href='https://www.linkedin.com/company/tech-bite-solution-pk/'><FaLinkedinIn /></Link></li>
+                                <li className='bg-white flex justify-center cursor-pointer text-black items-center w-7 h-7 rounded-full'><Link href='https://www.upwork.com/agencies/1828398087328567907/'><FaUpwork /></Link></li>
                             </ul>
                         </div>
                     </footer>
