@@ -3,13 +3,15 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import consultation from '/public/assets/consultation.svg'
-import calendar from '/public/assets/calendar.svg'
-import calendarPlus from '/public/assets/calendarPlus.svg'
-import notification from '/public/assets/notification.svg'
-import consult from '/public/assets/consult.svg'
-import clock from '/public/assets/clock.svg'
-import video from '/public/assets/video.svg'
+import consultation from '/public/assets/consultation.svg';
+import calendar from '/public/assets/calendar.svg';
+import calendarPlus from '/public/assets/calendarPlus.svg';
+import notification from '/public/assets/notification.svg';
+import consult from '/public/assets/consult.svg';
+import clock from '/public/assets/clock.svg';
+import video from '/public/assets/video.svg';
+import { InlineWidget } from "react-calendly"; 
+import Head from 'next/head'; 
 
 const icons = [
     { src: consultation, alt: 'Icon 1', style: 'top-10 left-24' },
@@ -44,7 +46,7 @@ const Consultation = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex py-5  relative justify-center">
+                <div className="flex py-5 relative justify-center">
                     <motion.div
                         style={{ x: xValue, opacity: opacityValue }}
                         initial={{ opacity: 0 }} // Ensure it starts invisible
@@ -65,7 +67,7 @@ const Consultation = () => {
                         <p className=" text-xl font-medium py-3 text-[#4C5267]">
                             Scheduling a consultation with our team is fast and simple. Just pick a convenient time and book a meeting with one of our experts.
                         </p>
-                        <p className="font-bold text-3xl py-3">30 Free Consultation</p>
+                        <p className="font-bold text-3xl py-3">Free Consultation</p>
                         <p className="flex gap-2 items-center">
                             <Image src={clock} alt='clock' />
                             <span className='text-[#4C5267] text-xl font-medium'> 30 Min</span>
@@ -79,7 +81,7 @@ const Consultation = () => {
                     <div className="p-5">
                         <h3 className="text-xl font-bold text-gray-800">Select Date and Time</h3>
                         <div className="bg-white p-4 rounded-lg shadow mt-4">
-                            <p>Calendar goes here</p> {/* Replace with your calendar component */}
+                            <InlineWidget url="https://calendly.com/techbitesolution1"  styles={{ height: '350px', width: '100%' }}  />
                         </div>
                         <div className="mt-4 text-gray-600">
                             <p>Timezone</p>
