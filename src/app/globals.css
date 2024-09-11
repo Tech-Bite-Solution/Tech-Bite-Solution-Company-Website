@@ -33,3 +33,52 @@ body {
 .swiper-pagination-bullet-active {
     background: #fff !important;
 }
+
+/* Custom Scrollbar Styling for WebKit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    height: 12px;
+    /* Height for horizontal scrollbar */
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* Color of the track */
+    border-radius: 50%;
+    /* Rounded track corners */
+}
+
+/* Thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #0F0E2C;
+    /* Scrollbar color */
+    border-radius: 50%;
+    /* Rounded thumb corners */
+    border: 3px solid transparent;
+    /* Padding around thumb */
+}
+
+/* Scrollbar hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #3BDB00;
+    /* Darker thumb color on hover */
+}
+
+/* Firefox Scrollbar Styling */
+html {
+    scrollbar-width: thin;
+    /* Thin scrollbar */
+    border-radius: 50%;
+    scrollbar-color: #3BDB00 transparent;
+    /* Thumb color, Track color */
+}
+
+/* Scrollbar styles for Edge, IE */
+body {
+    scrollbar-face-color: #3BDB00;
+    /* Scrollbar color */
+    scrollbar-track-color: transparent;
+    /* Track color */
+}

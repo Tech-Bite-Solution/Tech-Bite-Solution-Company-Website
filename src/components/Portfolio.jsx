@@ -105,14 +105,14 @@ const Portfolio = () => {
                 <motion.div
                     style={{ x: xValue }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8}}
+                    transition={{ duration: 0.8 }}
                     className=""
                 >
                     <Image src={portfolio} alt="Portfolio" className="py-6 md:h-auto h-28" />
                 </motion.div>
                 <h1 className="text-3xl font-bold absolute top-16 md:top-36">Portfolio</h1>
             </div>
-            <div className="px-4 py-8 max-w-6xl md:mx-auto">
+            <div data-aos="zoom-out-left" className="px-4 py-8 max-w-6xl md:mx-auto">
                 <Slider {...settings}>
                     {cardData.map((card) => (
                         <motion.div

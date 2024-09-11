@@ -16,13 +16,13 @@ export default function Home() {
     <>
       <Section>
         <HeroSection />
+        <AboutUs />
         <Services />
         <Industry />
         <Portfolio />
         <Clients />
         <Consultation />
         <WhyUs />
-        <AboutUs />
         <Reviews />
       </Section>
       {/* <TeamCarousel /> */}

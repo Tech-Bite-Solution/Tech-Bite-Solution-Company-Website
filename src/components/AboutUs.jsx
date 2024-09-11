@@ -3,11 +3,11 @@ import React from 'react'
 const AboutUs = () => {
     return (
         <div id='about-us' className="">
-            <div className="max-w-6xl py-5 mx-auto">
+            <div className="max-w-6xl py-5 px-5 mx-auto">
                 <div className="">
                     <h1 className='font-bold gradientText text-4xl py-3'>About US</h1>
                 </div>
-                <div className="">
+                <div data-aos="fade-right" className="">
                     <p className='py-4'>
                         At Tech Bite Solution, we are a dynamic IT solutions and SaaS provider committed to driving innovation and efficiency across a wide range of industries. From E-commerce and healthcare to construction, education, and more, our tailored solutions help businesses and institutions optimize their operations, enhance their digital presence, and achieve sustainable growth.
                     </p>

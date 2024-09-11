@@ -29,7 +29,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div ref={ref} className="py-16">
+            <div ref={ref} className="lg:py-16 py-5">
                 <div className="relative md:block hidden">
                     {icons.map((icon, index) => (
                         <motion.div
@@ -38,12 +38,12 @@ const HeroSection = () => {
                             animate={{ y: [0, -10, 0] }}
                             transition={{ repeat: Infinity, duration: 1.75, ease: 'easeInOut' }}
                         >
-                            <Image src={icon.src} alt={icon.alt} width={40} height={40} className='' />
+                            <Image src={icon.src} alt={icon.alt} width={50} height={50} className='' />
                         </motion.div>
                     ))}
                 </div>
-                <div className="flex flex-col items-center gap-10">
-                    <div className="max-w-4xl px-2 py-12 mx-auto">
+                <div className="flex flex-col items-center gap-5">
+                    <div data-aos="fade-right" className="max-w-4xl px-2 py-12 mx-auto">
                         <p className='md:text-5xl text-3xl py-5 font-bold text-center '>Your Partner in cutting edge <span className='gradientText'> software development</span></p>
                         <p className='font-medium py-6 text-center'>Empowering Industries with Scalable Solutions.
                             Transform your business operations with tailored software solutions that streamline processes, enhance efficiency, and drive growth.
@@ -52,7 +52,7 @@ const HeroSection = () => {
                             Bites of Business for your Business
                         </p>
                     </div>
-                    <button className='bggradient px-6 py-3 rounded-full text-center font-semibold'>Get Quotes</button>
+                    <button className='bggradient px-6 lg:px-16 hover:scale-105 transition-all duration-300 py-3 rounded-full text-center font-semibold'>Get Quotes</button>
                 </div>
             </div>
         </>

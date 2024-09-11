@@ -51,7 +51,7 @@ const Clients = () => {
                         style={{ x: xValue }}
                         initial={{ opacity: 0 }} // Ensure it starts invisible
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8}}
+                        transition={{ duration: 0.8 }}
                         className=""
                     >
                         <Image src={clients} alt='clients' className='py-6 z-10 ' />
@@ -83,7 +83,7 @@ const Clients = () => {
                         {/* Left Section */}
 
                         {/* Content Section */}
-                        <div className="lg:w-2/3">
+                        <div data-aos="fade-right" className="lg:w-2/3">
                             <h3 className="text-2xl font-bold text-gray-800">
                                 {currentTab.title}
                             </h3>
@@ -96,7 +96,7 @@ const Clients = () => {
                         </div>
 
                         {/* Right Section - Image */}
-                        <div className="lg:w-1/2">
+                        <div data-aos="fade-left" className="lg:w-1/2">
                             <div className="relative">
                                 <Image
                                     src={currentTab.image} // Dynamic image based on the selected tab

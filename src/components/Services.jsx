@@ -77,17 +77,17 @@ const Services = () => {
 
             <div className="flex py-5  overflow-hidden relative justify-center">
                 <motion.div
-                     style={{ x: xValue }}
-                     initial={{ opacity: 0 }} // Ensure it starts invisible
-                     whileInView={{ opacity: 1 }}
-                     transition={{ duration: 0.8}}
-                     className=""
+                    style={{ x: xValue }}
+                    initial={{ opacity: 0 }} // Ensure it starts invisible
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className=""
                 >
                     <Image src={services} alt='Services' className='py-6 z-10 md:h-auto h-28' />
                 </motion.div>
                 <h1 className='text-3xl font-bold absolute top-16 md:top-36'>Our Services</h1>
             </div>
-            <div className="flex flex-col max-w-6xl mx-auto relative lg:flex-row p-8">
+            <div data-aos="fade-right" className="flex flex-col max-w-6xl mx-auto relative lg:flex-row p-8">
                 {/* Sidebar */}
                 <div
                     id="sidebar"
