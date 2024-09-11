@@ -19,52 +19,38 @@ const testimonials = [
     {
         id: 1,
         name: 'Andrew Mika',
-        title: 'CEO at GoodRite',
+        title: 'CEO at VividBloom Media',
         image: male,
         feedback: `As a growing business, we needed reliable software to streamline operations. Tech Bite Solution delivered beyond our expectations, and their support team was always there to help.`,
     },
     {
         id: 2,
         name: 'Nika Bernouseville',
-        title: 'Business Partnership Manager at AmCash',
+        title: 'Business Partnership Manager at Aqualine Fitness',
         image: female,
         feedback: `Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!`,
     },
     {
         id: 3,
         name: 'Lisa Handerson',
-        title: 'Co-founder at Brainly',
+        title: 'Co-founder at STS Labs',
         image: women,
         feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
     },
     {
         id: 4,
-        name: 'Lisa Handerson',
-        title: 'Co-founder at Brainly',
+        name: 'Pauline Buatista',
+        title: 'Co-founder at GreenGrocer',
         image: female,
-        feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
+        feedback: `I had the pleasure of working closely with TBS on a project involving Database Migration, and I must say, it was an exceptional experience from start to finish. Their Data Engineering team is truly commendable, and their contributions were invaluable to the success of the project.`,
     },
     {
         id: 5,
-        name: 'Nika Bernouseville',
-        title: 'Business Partnership Manager at AmCash',
+        name: 'Maxime',
+        title: 'Director of Marketing at DipRack',
         image: women,
-        feedback: `Their blockchain expertise has been a game-changer for us. The Tech Bite Solution team made the entire integration process effortless. Fantastic service!`,
-    },
-    {
-        id: 6,
-        name: 'Lisa Handerson',
-        title: 'Co-founder at Brainly',
-        image: female,
-        feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
-    },
-    {
-        id: 7,
-        name: 'Lisa Handerson',
-        title: 'Co-founder at Brainly',
-        image: women,
-        feedback: `Working with Tech Bite Solution on our AI project was an excellent experience. Their team's attention to detail and timely delivery helped us automate key processes and improve efficiency.`,
-    },
+        feedback: `The onboarding process is pretty smooth yet efficient. The engineering team is highly qualified and collaborative. I have been working with TBS for months now and I feel it was the best decision so far!`,
+    }
 ];
 
 const Reviews = () => {
