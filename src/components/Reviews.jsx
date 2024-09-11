@@ -9,6 +9,8 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import reviews from '/public/assets/reviews.svg';
 import women from '/public/assets/women.svg';
 import male from '/public/assets/male.jpg';
+import maxime from '/public/assets/maxime.jpg';
+import pauline from '/public/assets/pauline.jpg';
 import female from '/public/assets/female.png';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow'; // Import effect-specific styles
@@ -41,14 +43,14 @@ const testimonials = [
         id: 4,
         name: 'Pauline Buatista',
         title: 'Co-founder at GreenGrocer',
-        image: female,
+        image: pauline,
         feedback: `I had the pleasure of working closely with TBS on a project involving Database Migration, and I must say, it was an exceptional experience from start to finish. Their Data Engineering team is truly commendable, and their contributions were invaluable to the success of the project.`,
     },
     {
         id: 5,
         name: 'Maxime',
         title: 'Director of Marketing at DipRack',
-        image: women,
+        image: maxime,
         feedback: `The onboarding process is pretty smooth yet efficient. The engineering team is highly qualified and collaborative. I have been working with TBS for months now and I feel it was the best decision so far!`,
     }
 ];

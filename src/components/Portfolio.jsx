@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import edu from '/public/assets/edu.svg';
 import cover from '/public/assets/cover.svg';
 import ego from '/public/assets/ego.svg';
+import iprisk from '/public/assets/iprisk.svg';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 function SampleNextArrow(props) {
@@ -74,7 +75,7 @@ const Portfolio = () => {
             subtitle: 'E-commerce',
             description1:
                 'A Chrome extension for e-commerce businesses that analyzes Amazon products and identifies IP risks. Built with Python (Flask) and powered by a specialized model that analyzes real-time data.',
-            imageUrl: ego,
+            imageUrl: iprisk,
         },
     ];
 
