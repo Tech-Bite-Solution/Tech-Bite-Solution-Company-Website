@@ -83,7 +83,7 @@ const Reviews = () => {
             </div>
 
             <Swiper
-                modules={[Pagination, Navigation, EffectCoverflow, Autoplay]} // Add Autoplay module
+                modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
                 spaceBetween={30}
                 slidesPerView={1}
                 navigation={{
@@ -100,21 +100,20 @@ const Reviews = () => {
                     slideShadows: true
                 }}
                 autoplay={{ delay: 5000 }} // Set autoplay delay
+                loop={true} // Enable infinite loop
                 breakpoints={{
-                    // When window width is >= 768px
                     768: {
-                        slidesPerView: 1  // Show 1 slide on tablets and mobile devices
+                        slidesPerView: 1
                     },
-                    // When window width is >= 1024px
                     1024: {
-                        slidesPerView: 3  // Show 3 slides on larger screens
+                        slidesPerView: 3
                     }
                 }}
                 className="max-w-6xl mx-auto relative"
             >
                 {testimonials.map((testimonial) => (
                     <SwiperSlide key={testimonial.id} className="px-4 lg:px-0">
-                        <div className="p-1 transform-gpu transition-transform duration-500 ease-in-out hover:scale-105">
+                        <div className="transform-gpu transition-transform duration-500 ease-in-out hover:scale-105">
                             <div className="bggradient rounded-3xl p-6 flex flex-col items-start max-w-lg mx-auto relative">
                                 <div className="absolute top-0 left-0 mt-4 px-8">
                                     <Image
@@ -134,13 +133,8 @@ const Reviews = () => {
                         </div>
                     </SwiperSlide>
                 ))}
-                {/* <div className="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-50 text-gray-400 cursor-pointer">
-                    <MdKeyboardArrowLeft className="text-5xl" />
-                </div>
-                <div className="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 z-50 text-gray-400 cursor-pointer">
-                    <MdKeyboardArrowRight className="text-5xl" />
-                </div> */}
             </Swiper>
+
         </div>
     );
 };

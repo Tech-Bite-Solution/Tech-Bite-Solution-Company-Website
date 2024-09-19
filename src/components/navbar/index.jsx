@@ -5,6 +5,8 @@ import Link from "next/link";
 import React, { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import tbite from "/public/assets/tbite.png";
+import { DownArrow } from "@/app/svg";
+import { categories } from "./data";
 
 const menuItems = [
     { label: "Home", url: "#" },
@@ -15,10 +17,12 @@ const menuItems = [
     { label: "Contact", url: "#contact" },
 ];
 
+
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
     const [activeSection, setActiveSection] = useState("");
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state
     const pathname = usePathname();
 
     const sectionRefs = useRef(menuItems.map(() => React.createRef())); // Create refs for each section
@@ -97,6 +101,40 @@ const Navbar = () => {
                                 </button>
                             </a>
                         ))}
+
+                        {/* Category Dropdown */}
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setIsDropdownOpen(true)}
+                            onMouseLeave={() => setIsDropdownOpen(false)}
+                        >
+                            <button
+                                className={`text-lg hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
+                            >
+                                Products <DownArrow />
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {isDropdownOpen && (
+                                <div className="absolute  top-full grid lg:grid-cols-3 grid-cols-1  lg:w-[900px] w-56 p-5 bg-white shadow-lg rounded-lg z-50">
+                                    {categories.map((category, index) => (
+                                        <div key={index} className="p-2">
+                                            <div className="text-[#3BDB00] font-semibold">
+                                                {category.category}
+                                            </div>
+                                            <ul className="pl-4 pt-2">
+                                                {category.services.map((service, i) => (
+                                                    <li key={i} className="hover:text-[#3BDB00] text-sm ">
+                                                        <a href="#"><span className="text-[#3BDB00] font-medium">{i + 1}.</span> {service}</a>
+
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     {/* Logo in the Center */}
@@ -122,7 +160,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button onClick={handleModal} className="md:hidden z-50 block text-secondary">
+                    <button onClick={handleModal} className="md:hidden z-50 block text-black">
                         {isModalOpen ? (
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -157,10 +195,11 @@ const Navbar = () => {
                     </button>
                 </div>
             </nav>
+
             {/* Mobile Menu Modal */}
             {isModalOpen && (
                 <div
-                    className="fixed top-0 left-0 w-full h-screen bg-white z-50 p-4"
+                    className="fixed top-20 left-0 w-full h-screen bg-white z-50 p-4"
                     onClick={closeModal}
                 >
                     <div className="flex flex-col gap-4">
@@ -175,10 +214,41 @@ const Navbar = () => {
                                 </button>
                             </a>
                         ))}
+                        {/* Category Dropdown */}
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setIsDropdownOpen(true)}
+                            onMouseLeave={() => setIsDropdownOpen(false)}
+                        >
+                            <button
+                                className={`text-lg hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
+                            >
+                                Products <DownArrow />
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {isDropdownOpen && (
+                                <div className="absolute  top-full grid lg:grid-cols-3 grid-cols-1  lg:w-[900px] w-56 p-5 bg-white shadow-lg rounded-lg z-50">
+                                    {categories.map((category, index) => (
+                                        <div key={index} className="p-2">
+                                            <div className="text-[#3BDB00] font-semibold">
+                                                {category.category}
+                                            </div>
+                                            <ul className="pl-4">
+                                                {category.services.map((service, i) => (
+                                                    <li key={i} className="hover:text-[#3BDB00]">
+                                                        <a href="#"><span className="text-[#3BDB00] font-medium">{i + 1}.</span> {service}</a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}
-
         </div>
     );
 };
