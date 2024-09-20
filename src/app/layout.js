@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import AnimationProvider from "@/components/AnimationProvider";
-import Head from "next/head";
+
 
 // Import and configure the Montserrat font
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/tbite.png" type="image/png" />
       </head>
 
-      <Head>
+      {/* <Head>
         <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/public/favicon-32x32.png" type="image/png" />
         <title>Home | Tech Bite Solution</title>
@@ -41,7 +41,7 @@ As a client-centered agency, we focus on understanding your unique challenges an
         <meta property="og:image" content="/public/assets/logo.svg" />
         <meta property="og:url" content="https://www.techbitesolution.com/" />
         <link rel="canonical" href="https://www.techbitesolution.com/" />
-      </Head>
+      </Head> */}
       <body className={montserrat.className}>
         <div className="">
           <Navbar />
