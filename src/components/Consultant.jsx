@@ -67,7 +67,7 @@ const Consultation = () => {
                 <p className="md:text-3xl text-xl md:text-center text-[#4C5267] md:py-2 py-5">
                     Choose from the available timeslots below to mark your calendar
                 </p>
-                <div data-aos="fade-right" className="grid max-w-6xl mx-auto md:grid-cols-1 items-start gap-10 pt-10">
+                <div id="meeting" data-aos="fade-right" className="grid max-w-6xl mx-auto md:grid-cols-1 items-start gap-10 pt-10">
                     <div className="text-left space-y-2">
                         <h2 className="text-6xl py-2 font-bold text-center gradientText">BOOK  A CALL!</h2>
                         <p className=" text-xl font-medium py-3 w-3/4 text-center mx-auto text-[#4C5267]">

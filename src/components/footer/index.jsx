@@ -74,9 +74,9 @@ const Footer = () => {
                                 <p>© 2024 All Rights Reserved</p>
                             </div>
                             <ul className="flex text-sm justify-center space-x-4">
-                                <li>Terms</li>
-                                <li>Privacy</li>
-                                <li>Cookies</li>
+                                <a href='/term-condition'>Terms & Conditions </a>
+                                <a href='/privacy-policey'>Privacy policey</a>
+                                {/* <li>Cookies</li> */}
                             </ul>
                             <ul className="flex text-center gap-5">
                                 <li className='bg-white flex cursor-pointer justify-center text-black items-center w-7 h-7 rounded-full'><Link href='https://www.instagram.com/techbite_solution/'><FaInstagram /></Link></li>

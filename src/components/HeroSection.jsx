@@ -52,7 +52,7 @@ const HeroSection = () => {
                             Bites of Business for your Business
                         </p>
                     </div>
-                    <button className='bggradient px-6 lg:px-16 hover:scale-105 transition-all duration-300 py-3 rounded-full text-center font-semibold'>Get Quote</button>
+                    <a href='#meeting' className='bggradient block px-6 lg:px-16 hover:scale-105 transition-all duration-300 py-3 rounded-full text-center font-semibold'>Get Quote</a>
                 </div>
             </div>
         </>

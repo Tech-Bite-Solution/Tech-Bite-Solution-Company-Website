@@ -109,7 +109,7 @@ const Navbar = () => {
                             onMouseLeave={() => setIsDropdownOpen(false)}
                         >
                             <button
-                                className={`text-lg hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
+                                className={`text-base text-gray-700 hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
                             >
                                 Products <DownArrow />
                             </button>
@@ -221,7 +221,7 @@ const Navbar = () => {
                             onMouseLeave={() => setIsDropdownOpen(false)}
                         >
                             <button
-                                className={`text-lg hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
+                                className={`text-base text-gray-700 hover:scale-105 hover:text-[#3BDB00] duration-300 transition-all bg-background py-2 px-4 rounded-full flex items-center gap-2`}
                             >
                                 Products <DownArrow />
                             </button>

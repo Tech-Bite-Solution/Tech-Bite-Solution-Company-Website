@@ -112,8 +112,8 @@ const Reviews = () => {
                 className="max-w-6xl mx-auto relative"
             >
                 {testimonials.map((testimonial) => (
-                    <SwiperSlide key={testimonial.id} className="px-4 lg:px-0">
-                        <div className="transform-gpu transition-transform duration-500 ease-in-out hover:scale-105">
+                    <SwiperSlide key={testimonial.id} className="px-4 lg:px-0 ">
+                        <div className="transform-gpu transition-transform duration-500 ease-in-out  ">
                             <div className="bggradient rounded-3xl p-6 flex flex-col items-start max-w-lg mx-auto relative">
                                 <div className="absolute top-0 left-0 mt-4 px-8">
                                     <Image

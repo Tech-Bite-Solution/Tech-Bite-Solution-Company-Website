@@ -17,6 +17,10 @@ body {
     color: transparent;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 .bggradient {
     background: linear-gradient(to right, #D8F700 0%, #3BDB00 50%);
 }
