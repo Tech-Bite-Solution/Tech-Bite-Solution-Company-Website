@@ -1,8 +1,8 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import AnimationProvider from "@/components/AnimationProvider";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import AnimationProvider from "../components/AnimationProvider";
 
 
 // Import and configure the Montserrat font

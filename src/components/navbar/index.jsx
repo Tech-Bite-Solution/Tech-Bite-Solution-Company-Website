@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import tbite from "/public/assets/tbite.png";
-import { DownArrow } from "@/app/svg";
+import { DownArrow } from "../../app/svg/index";
 import { categories } from "./data";
 
 const menuItems = [

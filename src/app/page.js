@@ -1,20 +1,20 @@
 'use client';
-import AboutUs from "@/components/AboutUs";
-import Clients from "@/components/Clients";
-import Consultation from "@/components/Consultant";
-import HeroSection from "@/components/HeroSection";
-import Industry from "@/components/Industry";
-import Portfolio from "@/components/Portfolio";
-import Reviews from "@/components/Reviews";
-import Section from "@/components/Section";
-import Services from "@/components/Services";
-import WhyUs from "@/components/WhyUs";
+import AboutUs from "../components/AboutUs";
+import Clients from "../components/Clients";
+import Consultation from "../components/Consultant";
+import HeroSection from "../components/HeroSection";
+import Industry from "../components/Industry";
+import Portfolio from "../components/Portfolio";
+import Reviews from "../components/Reviews";
+import Section from "../components/Section";
+import Services from "../components/Services";
+import WhyUs from "../components/WhyUs";
 import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/public/favicon-32x32.png" type="image/png" />
         <title>Home | Tech Bite Solution</title>
@@ -25,7 +25,7 @@ export default function Home() {
         <meta property="og:image" content="/public/assets/logo.svg" />
         <meta property="og:url" content="https://www.techbitesolution.com/" />
         <link rel="canonical" href="https://www.techbitesolution.com/" />
-      </Head>
+      </Head> */}
       <Section>
         <HeroSection />
         <AboutUs />
