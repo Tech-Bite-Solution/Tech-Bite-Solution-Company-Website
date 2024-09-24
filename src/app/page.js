@@ -9,6 +9,7 @@ import Reviews from "../components/Reviews";
 import Section from "../components/Section";
 import Services from "../components/Services";
 import WhyUs from "../components/WhyUs";
+import TeamSection from "../components/teams-section.jsx";
 import Head from "next/head";
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
         <Clients />
         <Consultation />
         <WhyUs />
+        <TeamSection />
         <Reviews />
       </Section>
     </>
