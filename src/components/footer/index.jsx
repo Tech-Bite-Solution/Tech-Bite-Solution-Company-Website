@@ -55,16 +55,30 @@ const Footer = () => {
                             {/* Email Subscription */}
                             <div className="space-y-3">
                                 <h3 className="gradientText  font-semibold">Talk to a consultant</h3>
-                                <p className='text-[#77808B] text-base'>Your Email</p>
-                                <div className="flex space-x-2">
+                                <div className="flex flex-col space-x-2 gap-4">
+                                    <label htmlFor=""></label>
+                                    <input
+                                        type="name"
+                                        placeholder="Enter Your Name"
+                                        className="p-2 rounded-lg placeholder:text-xs focus:outline-none text-black"
+                                    />
                                     <input
                                         type="email"
                                         placeholder="Enter Your Email"
                                         className="p-2 rounded-lg placeholder:text-xs focus:outline-none text-black"
                                     />
-                                    <button className="bggradient hover:bg-green-600 font-semibold text-white px-6 rounded-lg">
-                                        Send
-                                    </button>
+                                    <input
+                                        type="subject"
+                                        placeholder="Enter Your Subject"
+                                        className="p-2 rounded-lg placeholder:text-xs focus:outline-none text-black"
+                                    />
+
+                                    <textarea placeholder='Message' className="p-2 rounded-lg placeholder:text-xs focus:outline-none text-black" name="" id="" rows={4} cols={4}></textarea>
+                                    <div className="">
+                                        <button className="bggradient hover:bg-green-600 font-semibold text-white px-6 py-3 rounded-lg">
+                                            Send
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
