@@ -35,17 +35,23 @@ const Footer = () => {
 
         // Prepare the template parameters based on formData
         const templateParams = {
-            to_email: 'khalidirfani1234@gmail.com',
+            to_email: 'techbitesolution1@gmail.com',
             email: formData.email,
             name: formData.name,
             subject: formData.subject,
             message: formData.message,
         };
 
-        emailjs.send('service_3fdw8hc', 'template_fn2qurg', templateParams, 'OVxwIhOnvYX7ef2Jh')
+        emailjs.send('service_aoqc42c', 'template_g0mup3v', templateParams, '967MiBz30v5eHS8cE')
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 setSubmitted(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: '',
+                    subject: ''
+                });
             }, (err) => {
                 console.log('FAILED...', err);
                 setError(true);
@@ -109,7 +115,7 @@ const Footer = () => {
                         {/* Email Subscription */}
                         <div className="space-y-3">
                             <h3 className="gradientText font-semibold">Talk to a consultant</h3>
-                            <form ref={form} onSubmit={handleSubmit} className="flex flex-col space-x-2 gap-4">
+                            <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
                                 <input
                                     type="text"
                                     name="name"
