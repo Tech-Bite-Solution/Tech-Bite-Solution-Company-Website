@@ -119,6 +119,7 @@ const Footer = () => {
                                 <input
                                     type="text"
                                     name="name"
+                                    required
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="Enter Your Name"
@@ -127,6 +128,7 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     name="email"
+                                    required
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="Enter Your Email"
@@ -135,6 +137,7 @@ const Footer = () => {
                                 <input
                                     type="text"
                                     name="subject"
+                                    required
                                     value={formData.subject}
                                     onChange={handleChange}
                                     placeholder="Enter Your Subject"
@@ -145,6 +148,7 @@ const Footer = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     placeholder="Message"
+                                    required
                                     className="p-2 rounded-lg placeholder:text-xs focus:outline-none text-black"
                                     rows={4}
                                 ></textarea>
