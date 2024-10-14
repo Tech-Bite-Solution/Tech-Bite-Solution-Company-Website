@@ -9,6 +9,7 @@ import email from '/public/assets/email.svg';
 import Link from 'next/link';
 import { FaUpwork } from 'react-icons/fa6';
 import emailjs from '@emailjs/browser';
+import { toast, Toaster } from 'react-hot-toast'; // Import react-hot-toast
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -20,12 +21,12 @@ const Footer = () => {
 
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
-    const form = useRef(); // Defined form ref
+    const form = useRef();
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value // Updated to 'name' to match the form fields
+            [e.target.name]: e.target.value
         });
     };
 
@@ -33,7 +34,6 @@ const Footer = () => {
         e.preventDefault();
         setError(false);
 
-        // Prepare the template parameters based on formData
         const templateParams = {
             to_email: 'techbitesolution1@gmail.com',
             email: formData.email,
@@ -52,15 +52,18 @@ const Footer = () => {
                     message: '',
                     subject: ''
                 });
+                toast.success('Email sent successfully!'); // Show success toast
             }, (err) => {
                 console.log('FAILED...', err);
                 setError(true);
+                toast.error('Failed to send email. Please try again.'); // Show error toast
             });
     };
 
     return (
         <div id="contact" className="bg-black">
             <div className="px-10 mx-auto">
+                <Toaster /> {/* Add Toaster component */}
                 <footer className="text-white">
                     <div className="py-10 grid grid-cols-1 md:grid-cols-4">
                         {/* Logo and Description */}
