@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import portfolio from '/public/assets/portfolio.svg';
+import team from '/public/assets/team.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { IoLogoLinkedin } from 'react-icons/io';
@@ -47,7 +47,7 @@ const TeamSection = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <Image src={portfolio} alt="Portfolio" className="py-6 md:h-auto h-28" />
+                    <Image src={team} alt="team" className="py-6 md:h-auto h-28" />
                 </motion.div>
                 <h1 className="text-3xl font-bold absolute top-16 md:top-36">Our Team</h1>
             </div>

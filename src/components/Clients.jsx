@@ -36,7 +36,7 @@ const Clients = () => {
         },
         {
             title: 'Large Scale Enterprises',
-            description1: "sAt Tech Bite Solution, we understand that large-scale enterprises require more than just off-the-shelf solutions to thrive in today's competitive landscape. That's why we offer customized IT services across web and software development, mobile app development, data analytics and engineering, AI/ML, and blockchain. Our team collaborates closely with enterprise clients, aligning technology with business goals to unlock new efficiencies, elevate customer experiences, and drive sustainable growth. Whether it’s building scalable platforms or leveraging AI for data-driven decisions, we’re here to deliver impactful solutions tailored to your enterprise’s unique needs.",
+            description1: "At Tech Bite Solution, we understand that large-scale enterprises require more than just off-the-shelf solutions to thrive in today's competitive landscape. That's why we offer customized IT services across web and software development, mobile app development, data analytics and engineering, AI/ML, and blockchain. Our team collaborates closely with enterprise clients, aligning technology with business goals to unlock new efficiencies, elevate customer experiences, and drive sustainable growth. Whether it’s building scalable platforms or leveraging AI for data-driven decisions, we’re here to deliver impactful solutions tailored to your enterprise’s unique needs.",
             image: large, // Change this to the Law GPT image
             imageAlt: 'large',
         },
