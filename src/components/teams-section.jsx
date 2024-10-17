@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import team from '/public/assets/team.png';
+import team from '/public/assets/team.svg';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { IoLogoLinkedin } from 'react-icons/io';
